@@ -1,0 +1,42 @@
+---
+title: "Lab 4"
+#Max Ward
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+```
+
+```{r}
+babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
+babies <- rename(babies, bwtoz = `bwt/oz`)
+```
+
+```{r}
+ggplot(data = babies) + 
+  stat_summary(
+    mapping = aes(x = mrace, y = bwtoz),
+    fun.ymin = min,
+    fun.ymax = max,
+    fun.y = median
+  )
+```
+```{r}
+ggplot(data = babies) + 
+  stat_summary(
+    mapping = aes(x = drace, y = bwtoz),
+    fun.ymin = min,
+    fun.ymax = max,
+    fun.y = median
+  )
+```
+
+
+
+Quetion: Does the mother of fathers race affect the birth weight of the baby?
+
+Answer: Based on the graphs it does not look like the race of the mom or dad have any effect on the babies birthweight. 
+
+
