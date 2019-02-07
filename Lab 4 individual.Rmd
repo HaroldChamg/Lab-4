@@ -1,0 +1,41 @@
+---
+title: '1'
+output: word_document
+---
+
+```{r setup, include=FALSE}
+#knitr::opts_chunk$set(echo = False)
+```
+
+
+
+```{r}
+library(tidyverse)
+babies <- read_csv("https://raw.githubusercontent.com/ervance1/Sp2018-Data-Science-repo/master/babies2a.dat")
+babies <- rename(babies, bwtoz = `bwt/oz`)
+```
+
+```{r}
+ggplot(data = babies)+
+  geom_point(mapping = aes(x = mage, y =bwtoz )) +
+  geom_smooth(mapping = aes(x= mage, y= bwtoz))
+```
+
+```{r}
+ggplot(data = babies)+
+  geom_point(mapping = aes(x = mage, y =bwtoz )) +
+  geom_smooth(mapping = aes(x= dage, y= bwtoz))
+
+```
+
+```{r}
+cor(babies$bwtoz,babies$dage, use = "complete.obs")
+```
+
+```{r}
+cor(babies$bwtoz,babies$mage,use = "complete.obs")
+```
+
+Question: Does parents age affect the weight of new-borns?
+
+Answer: Barely, according the the charts and analysis both mom's and dad's don't affect much to babies weight. Although, we can still see dad's age has a little more impact to kids weight, but I believe we can ignore the difference since the numbers are small.
