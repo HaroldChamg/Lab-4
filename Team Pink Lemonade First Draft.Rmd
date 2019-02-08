@@ -67,6 +67,11 @@ As you can see, the number of premature babies increases by just 4 with smoking 
 
 **Preliminary Question:**
 
+
+ggplot(data = babies) + 
+  geom_point(mapping = aes(x = bwtoz , y = mrace)) + 
+  facet_wrap(~ smoke, nrow = 2)
+
 There is a few variables in which the data between smokers and non-smokers is different, here are their plots.
 ```{r}
 ggplot(data = babies) +
