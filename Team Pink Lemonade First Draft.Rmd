@@ -195,7 +195,7 @@ I, Jon Guay, created a plot showing the relationship between father's education 
 
 * Max Ward created his individual plot
 
-* Harold Chang created his individual plot
+* Harold Chang created his individual plot, and came up with interesting question, and answered it with the visuals and numbers
 The team used several non-defaults, such as facet_wrap, facet_grid, labels, legends, titles, and 5 different geom plots, including col, stat, point, smooth, and bar.
 
 
